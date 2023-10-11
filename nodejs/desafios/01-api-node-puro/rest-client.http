@@ -1,0 +1,51 @@
+// Get all tasks
+GET http://localhost:3333/tasks
+
+###
+
+// Get task by id
+GET http://localhost:3333/tasks/?id=57087933-57e1-4474-88fd-25bcd3bb1567
+
+###
+
+// Get tasks by title
+GET http://localhost:3333/tasks/?title=teste
+
+###
+
+// Get tasks by description
+GET http://localhost:3333/tasks/?description=teste
+
+###
+
+// Create a new task
+POST http://localhost:3333/tasks
+Content-Type: application/json
+
+{
+  "title": "Nova task",
+  "description": "Descrição da nova task"
+}
+
+###
+
+// Edit title and/or description task
+PUT http://localhost:3333/tasks/55660c43-7cf9-4bd6-a43a-f0687b122097
+Content-Type: application/json
+
+{
+  "title": "Novo titulo",
+  "description": "Nova descrição da task"
+}
+
+###
+
+// Toggle completed task
+PATCH http://localhost:3333/tasks/3cf2a01c-f585-4663-8d60-035428a6cfde/complete
+
+###
+
+// Delete task
+DELETE http://localhost:3333/tasks/55660c43-7cf9-4bd6-a43a-f0687b122097
+
+###

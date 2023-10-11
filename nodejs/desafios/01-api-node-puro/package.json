@@ -1,0 +1,17 @@
+{
+  "name": "01-api-node-puro",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --trace-warnings --watch src/server.js",
+    "csv": "node streams/import-csv.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csv-parse": "^5.5.0"
+  }
+}
