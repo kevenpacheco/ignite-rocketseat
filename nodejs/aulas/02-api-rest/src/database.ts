@@ -1,11 +1,18 @@
 import { knex as knexSetup, Knex } from 'knex'
 import { env } from './env'
 
+function getConnection() {
+  if (env.DATABASE_CLIENT === 'sqlite3') {
+    return {
+      filename: env.DATABASE_URL,
+    }
+  }
+  return env.DATABASE_URL
+}
+
 export const config: Knex.Config = {
-  client: 'sqlite3',
-  connection: {
-    filename: env.DATABASE_URL,
-  },
+  client: env.DATABASE_CLIENT,
+  connection: getConnection(),
   migrations: {
     directory: './db/migrations',
     extension: 'ts',
